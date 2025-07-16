@@ -6,7 +6,7 @@ phases:
       python: 3.8
     commands:
       - rm -rf terraform
-      - wget -O terraform.zip https://releases.hashicorp.com/terraform/1.5.0/terraform_1.5.0_linux_amd64.zip
+      - wget -O terraform.zip https://releases.hashicorp.com/terraform/1.12.2/terraform_1.12.2_linux_amd64.zip
       - unzip terraform.zip
       - mv terraform /usr/local/bin/
       - terraform --version
