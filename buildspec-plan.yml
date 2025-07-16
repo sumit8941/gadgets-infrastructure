@@ -5,11 +5,13 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
+      - wget -O terraform.zip https://releases.hashicorp.com/terraform/1.12.2/terraform_1.12.2_linux_amd64.zip
+      - unzip -o terraform.zip
+      - mv terraform /usr/local/bin/
       - terraform --version
   
   pre_build:
     commands:
-      - cd terraform
       - terraform init
   
   build:
@@ -23,5 +25,5 @@ phases:
 
 artifacts:
   files:
-    - terraform/tfplan
-    - terraform/**/*
+    - tfplan
+    - "**/*"
