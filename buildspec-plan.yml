@@ -13,10 +13,12 @@ phases:
   
   pre_build:
     commands:
+      - cd terraform
       - terraform init
   
   build:
     commands:
+      - cd terraform
       - terraform validate
       - terraform plan -out=tfplan
   
