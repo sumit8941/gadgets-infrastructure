@@ -13,20 +13,10 @@ phases:
   
   pre_build:
     commands:
-      - pwd
-      - ls
-      - cd /usr/local/bin/terraform
-      - pwd
-      - ls
       - terraform init
   
   build:
     commands:
-      - pwd
-      - ls
-      - cd /usr/local/bin/terraform
-      - pwd
-      - ls
       - terraform apply -auto-approve
   
   post_build:
