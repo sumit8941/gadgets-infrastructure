@@ -15,12 +15,18 @@ phases:
     commands:
       - pwd
       - ls
-      - cd terraform
+      - cd /usr/local/bin/terraform
+      - pwd
+      - ls
       - terraform init
   
   build:
     commands:
-      - cd terraform
+      - pwd
+      - ls
+      - cd /usr/local/bin/terraform
+      - pwd
+      - ls
       - terraform validate
       - terraform plan -out=tfplan
   
