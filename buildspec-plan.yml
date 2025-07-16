@@ -13,6 +13,8 @@ phases:
   
   pre_build:
     commands:
+      - pwd
+      - ls
       - cd terraform
       - terraform init
   
