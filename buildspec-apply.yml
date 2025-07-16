@@ -13,10 +13,12 @@ phases:
   
   pre_build:
     commands:
+      - cd terraform
       - terraform init
   
   build:
     commands:
+      - cd terraform
       - terraform apply -auto-approve
   
   post_build:
