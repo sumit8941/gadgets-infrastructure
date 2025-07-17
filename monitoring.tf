@@ -44,9 +44,9 @@ resource "aws_cloudwatch_metric_alarm" "alb_response_time" {
   }
 }
 
-# CloudWatch Alarms for EC2 Instances
-resource "aws_cloudwatch_metric_alarm" "web_cpu" {
-  alarm_name          = "gadgets-web-cpu-utilization"
+# CloudWatch Alarms for Auto Scaling Group
+resource "aws_cloudwatch_metric_alarm" "asg_cpu" {
+  alarm_name          = "gadgets-asg-cpu-utilization"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = "2"
   metric_name         = "CPUUtilization"
@@ -54,11 +54,11 @@ resource "aws_cloudwatch_metric_alarm" "web_cpu" {
   period              = "300"
   statistic           = "Average"
   threshold           = "80"
-  alarm_description   = "This metric monitors web server CPU utilization"
+  alarm_description   = "This metric monitors ASG CPU utilization"
   alarm_actions       = [aws_sns_topic.alerts.arn]
 
   dimensions = {
-    InstanceId = aws_instance.web.id
+    AutoScalingGroupName = aws_autoscaling_group.web.name
   }
 }
 
