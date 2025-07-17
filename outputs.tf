@@ -8,9 +8,9 @@ output "alb_dns_name" {
   value       = aws_lb.main.dns_name
 }
 
-output "web_instance_id" {
-  description = "ID of the web server instance"
-  value       = aws_instance.web.id
+output "web_asg_name" {
+  description = "Name of the web server Auto Scaling Group"
+  value       = aws_autoscaling_group.web.name
 }
 
 output "db_instance_id" {
@@ -18,9 +18,9 @@ output "db_instance_id" {
   value       = aws_instance.db.id
 }
 
-output "web_private_ip" {
-  description = "Private IP of web server"
-  value       = aws_instance.web.private_ip
+output "web_launch_template_id" {
+  description = "ID of the web server launch template"
+  value       = aws_launch_template.web.id
 }
 
 output "db_private_ip" {
